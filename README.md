@@ -169,7 +169,7 @@ fun setError(errorView: Int, errorClickId: Int, onRetryClickListener: OnRetryCli
 ![image](http://lc-47sd2ifv.cn-n1.lcfile.com/a2a787511ddb0461bfb1.gif)
 
 
-代码已经上传到Github[https://github.com/Hankkin/PageLayoutDemo](https://github.com/Hankkin/PageLayoutDemo)
+代码已经上传到Github[https://github.com/Hankkin/PageLayoutDemojava](https://github.com/Hankkin/PageLayoutDemojava)
 
 
 **Reading：一款不错的Material Desgin风格的Kotlin版本的开源APP**
