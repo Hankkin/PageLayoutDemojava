@@ -77,7 +77,8 @@ public class PageLayout extends FrameLayout {
                 mError.setVisibility(VISIBLE);
                 break;
             case CUSTOM_TYPE:
-                mCustom.setVisibility(VISIBLE);
+                if (mCustom != null)
+                    mCustom.setVisibility(VISIBLE);
                 break;
             case CONTENT_TYPE:
                 mContent.setVisibility(VISIBLE);
@@ -85,12 +86,14 @@ public class PageLayout extends FrameLayout {
         }
     }
 
-    private void setViewGone(){
+    private void setViewGone() {
         mLoading.setVisibility(GONE);
         mEmpty.setVisibility(GONE);
         mError.setVisibility(GONE);
-        mCustom.setVisibility(GONE);
         mContent.setVisibility(GONE);
+        if (mCustom != null) {
+            mCustom.setVisibility(GONE);
+        }
     }
 
     public void showLoading() {
@@ -225,8 +228,8 @@ public class PageLayout extends FrameLayout {
         /**
          * 自定义空布局
          */
-        public Builder setEmpty(int empty,int emptyTvId) {
-            View view = mInflater.inflate(empty,mPageLayout,false);
+        public Builder setEmpty(int empty, int emptyTvId) {
+            View view = mInflater.inflate(empty, mPageLayout, false);
             mTvEmpty = view.findViewById(emptyTvId);
             mPageLayout.mEmpty = view;
             mPageLayout.addView(view);
@@ -249,6 +252,7 @@ public class PageLayout extends FrameLayout {
             mTvLoading.setText(text);
             return this;
         }
+
         /**
          * 设置默认闪烁加载文案
          */
@@ -390,12 +394,12 @@ public class PageLayout extends FrameLayout {
             return this;
         }
 
-        public Builder setOnRetryListener(OnRetryClickListener onRetryListener){
+        public Builder setOnRetryListener(OnRetryClickListener onRetryListener) {
             this.mOnRetryClickListener = onRetryListener;
             return this;
         }
 
-        public PageLayout create(){
+        public PageLayout create() {
             return mPageLayout;
         }
 
