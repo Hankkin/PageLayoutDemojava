@@ -377,8 +377,10 @@ public class PageLayout extends FrameLayout {
                 if (targetView instanceof View) {
                     oldContent = (View) targetView;
                     for (int i = 0; i < childCount; i++) {
-                        index = i;
-                        break;
+                        if (content.getChildAt(i) == oldContent) {
+                            index = i;
+                            break;
+                        }
                     }
                 } else {
                     oldContent = content.getChildAt(0);
