@@ -30,6 +30,9 @@ public class TestFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private PageLayout mPageLayout;
+
+
 
     public TestFragment() {
         // Required empty public constructor
