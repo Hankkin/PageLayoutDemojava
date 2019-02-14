@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".DefaultActivity" />
         <activity android:name=".DemoActivity"></activity>
+        <activity android:name=".FragmentActivity"/>
     </application>
 
 </manifest>

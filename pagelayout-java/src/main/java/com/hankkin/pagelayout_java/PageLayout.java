@@ -366,7 +366,10 @@ public class PageLayout extends FrameLayout {
             } else if (targetView instanceof Fragment) {
                 mContext = ((Fragment) targetView).getActivity();
                 content = (ViewGroup) ((Fragment) targetView).getView().getParent();
-            } else if (targetView instanceof View) {
+            } else if (targetView instanceof android.support.v4.app.Fragment) {//新增V4Fragment
+                mContext = ((android.support.v4.app.Fragment) targetView).getActivity();
+                content = (ViewGroup) ((android.support.v4.app.Fragment) targetView).getView().getParent();
+            }else if (targetView instanceof View) {
                 mContext = ((View) targetView).getContext();
                 content = (ViewGroup) ((View) targetView).getParent();
             }
